@@ -1,0 +1,242 @@
+     A*%%TS  SD  20260317  004146  MARIOS      REL-V7R5M0  5770-WDS
+     A*=====================================================================
+     A* Display File: CRTSRVPGMD
+     A* Description: Interactive Module Compilation System
+     A*=====================================================================
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      INDARA
+     A                                      PRINT
+     A                                      ERRSFL
+     A*=====================================================================
+     A* Library List Subfile
+     A*=====================================================================
+     A          R LIBSFL                    SFL
+     A*%%TS  SD  20260311  160126  BCOINFMSM   REL-V7R5M0  5770-WDS
+     A  99                                  SFLNXTCHG
+     A            OPT            1A  B  7  3VALUES(' ' '1')
+     A  50                                  DSPATR(RI)
+     A            LIBNAME       10A  O  7  7
+     A            LIBTYPE       10A  O  7 19
+     A            LIBTEXT       50A  O  7 31
+     A*=====================================================================
+     A* Library List Subfile Control
+     A*=====================================================================
+     A          R LIBCTL                    SFLCTL(LIBSFL)
+     A*%%TS  SD  20260311  160126  BCOINFMSM   REL-V7R5M0  5770-WDS
+     A                                      SFLSIZ(9999)
+     A                                      SFLPAG(0014)
+     A  91                                  SFLDSP
+     A  92                                  SFLDSPCTL
+     A  93                                  SFLCLR
+     A  94                                  SFLEND(*MORE)
+     A                                      OVERLAY
+     A                                      CA05(05)
+     A                                      CA06(06)
+     A                                      CA12(12)
+     A            SRCHLIB       10A  B  5 12
+     A                                  3  2'Selección de biblioteca'
+     A                                      DSPATR(HI)
+     A                                  5  2'Búsqueda:'
+     A                                      DSPATR(HI)
+     A                                  6  2'Opt  Biblioteca  Tipo        Descr-
+     A                                      ipción                             -
+     A                                               '
+     A                                      DSPATR(HI)
+     A*=====================================================================
+     A* Source File Subfile
+     A*=====================================================================
+     A          R FILESFL                   SFL
+     A  99                                  SFLNXTCHG
+     A            FOPT           1A  B  7  3VALUES(' ' '1')
+     A  51                                  DSPATR(RI)
+     A            SRCFILE       10A  O  7  7
+     A            SRCLIB        10A  O  7 19
+     A            SRCTEXT       50A  O  7 31
+     A*=====================================================================
+     A* Source File Subfile Control
+     A*=====================================================================
+     A          R FILECTL                   SFLCTL(FILESFL)
+     A*%%TS  SD  20260311  160126  BCOINFMSM   REL-V7R5M0  5770-WDS
+     A                                      SFLSIZ(9999)
+     A                                      SFLPAG(0014)
+     A  95                                  SFLDSP
+     A  96                                  SFLDSPCTL
+     A  97                                  SFLCLR
+     A  98                                  SFLEND(*MORE)
+     A                                      OVERLAY
+     A                                      CA05(05)
+     A                                      CA12(12)
+     A            SELLIB        10A  O  5 12DSPATR(HI)
+     A                                  3  2'Selección de archivo Fuente'
+     A                                      DSPATR(HI)
+     A                                  5  2'Libreria:'
+     A                                      DSPATR(HI)
+     A                                  6  2'Opt  Archivo     Biblioteca  Descr-
+     A                                      ipción                             -
+     A                                               '
+     A                                      DSPATR(HI)
+     A*=====================================================================
+     A* Member Subfile
+     A*=====================================================================
+     A          R MBRSFL                    SFL
+     A  99                                  SFLNXTCHG
+     A            MOPT           1A  B  8  3VALUES(' ' '1')
+     A  52                                  DSPATR(RI)
+     A            MBRNAME       10A  O  8  7
+     A            MBRTYPE       10A  O  8 19
+     A            MBRTEXT       50A  O  8 31
+     A*=====================================================================
+     A* Member Subfile Control
+     A*=====================================================================
+     A          R MBRCTL                    SFLCTL(MBRSFL)
+     A*%%TS  SD  20260311  160126  BCOINFMSM   REL-V7R5M0  5770-WDS
+     A                                      SFLSIZ(9999)
+     A                                      SFLPAG(0013)
+     A  85                                  SFLDSP
+     A  86                                  SFLDSPCTL
+     A  87                                  SFLCLR
+     A  88                                  SFLEND(*MORE)
+     A                                      OVERLAY
+     A                                      CA05(05)
+     A                                      CA12(12)
+     A            SELFIL        10A  O  5 12DSPATR(HI)
+     A            SELLIBB       10A  O  6 12DSPATR(HI)
+     A                                  3  2'Selección de miembro'
+     A                                      DSPATR(HI)
+     A                                  5  2'Archivo :'
+     A                                      DSPATR(HI)
+     A                                  6  2'Libreria:'
+     A                                      DSPATR(HI)
+     A                                  7  2'Opt  Miembro     Tipo        Descr-
+     A                                      ipción                             -
+     A                                               '
+     A                                      DSPATR(HI)
+     A*=====================================================================
+     A* Main Panel
+     A*=====================================================================
+     A          R MAINPNL
+     A*%%TS  SD  20260317  004146  MARIOS      REL-V7R5M0  5770-WDS
+     A                                      CA03(03)
+     A                                      CF04(04)
+     A                                      CA05(05)
+     A                                      CA12(12)
+     A            PGMNAM        10A  O  1 35DSPATR(HI)
+     A                                      COLOR(BLU)
+     A            CURDATE        8Y 0O  1 70EDTCDE(Y)
+     A            CURTIME        6Y 0O  2 70EDTWRD('  :  :  ')
+     A                                  1  2'Module Compilation System'
+     A                                      DSPATR(HI)
+     A                                  3  2'Criterios de selección'
+     A                                      DSPATR(HI)
+     A            INLIB         10A  B  5  2
+     A  60                                  DSPATR(PR)
+     A  61                                  DSPATR(RI)
+     A                                  5 14'Biblioteca'
+     A                                  5 70'F4=Prompt'
+     A            NUMPASE       10A  B  6  2
+     A                                  6 14'Número de pase'
+     A            INSRCF        10A  O  7  2
+     A            INSRCFI       10A  B  7  2
+     A N62 63                               DSPATR(RI)
+     A  80                                  COLOR(RED)
+     A                                  7 14'Archivo Fisico Fuente'
+     A                                  8 70'F4=Prompt'
+     A            INMBR         10A  B  8  2
+     A  64                                  DSPATR(PR)
+     A  65                                  DSPATR(RI)
+     A  80                                  COLOR(RED)
+     A                                  8 14'Miembro'
+     A                                 10  2'Opciones de compilación'
+     A                                      DSPATR(HI)
+     A            CRTOPT         1A  B 12  2VALUES('1' '2' '3')
+     A  66                                  DSPATR(RI)
+     A  80                                  COLOR(RED)
+     A                                 12 14'1=Módulo  2=Bnd  3=Programa Servic-
+     A                                      io'
+     A            TGTLIB        10A  B 13  2
+     A  67                                  DSPATR(RI)
+     A  80                                  COLOR(RED)
+     A                                 13 14'Target Library  . . .'
+     A            DBGVIEW       10A  B 14  2
+     A  80                                  COLOR(RED)
+     A                                 14 14'Debug View  . . . . .'
+     A                                 14 40'*SOURCE *LIST *ALL *NONE'
+     A            OPTIMIZE       6A  B 15  2
+     A  80                                  COLOR(RED)
+     A                                 15 14'Optimize  . . . . . .'
+     A                                 15 40'*NONE *BASIC *FULL'
+     A            GENLVL         2S 0B 16  2
+     A  80                                  COLOR(RED)
+     A                                 16 14'Severity Level  . . .'
+     A                                 16 40'0-40'
+     A                                 18  2'Status'
+     A                                      DSPATR(HI)
+     A            STATUS        70A  O 19  2
+     A  68                                  DSPATR(HI)
+     A  69                                  DSPATR(RI)
+     A                                      COLOR(RED)
+     A                                 22  2'F3=Exit   F4=Prompt   F5=Refresh  -
+     A                                       F12=Cancel'
+     A                                 22 50'Enter=Process'
+     A*=====================================================================
+     A* Confirmation Window
+     A*=====================================================================
+     A          R CONFIRM                   OVERLAY
+     A                                      WINDOW(7 10 9 60)
+     A                                      PUTOVR
+     A                                      CA12(12)
+     A            CNFMSG1       50A  O  2  3
+     A            CNFMSG2       50A  O  3  3
+     A            CNFMSG3       50A  O  4  3
+     A            CNFRESP        1A  B  6  3VALUES('Y' 'N' 'y' 'n')
+     A  70                                  DSPATR(RI)
+     A                                  1  3'Confirm Compilation'
+     A                                      DSPATR(HI)
+     A                                  6  5'Continue? (Y/N)'
+     A*=====================================================================
+     A* Progress Window
+     A*=====================================================================
+     A          R PROGRESS                  OVERLAY
+     A                                      WINDOW(8 10 8 60)
+     A            PRGMSG1       50A  O  2  3
+     A            PRGMSG2       50A  O  3  3
+     A            PRGMSG3       50A  O  4  3
+     A            PRGMSG4       50A  O  5  3
+     A            PRGMSG5       50A  O  6  3
+     A            PRGMSG6       50A  O  7  3
+     A                                  1  3'Processing...'
+     A                                      DSPATR(HI)
+     A*=====================================================================
+     A* Results Window
+     A*=====================================================================
+     A          R RESULTS                   OVERLAY
+     A                                      WINDOW(10 8 11 64)
+     A                                      PUTOVR
+     A                                      CA12(12)
+     A            RESMSG1       54A  O  2  3
+     A  71                                  DSPATR(HI)
+     A  72                                  DSPATR(RI)
+     A            RESMSG2       54A  O  3  3
+     A            RESMSG3       54A  O  4  3
+     A            RESMSG4       54A  O  5  3
+     A            RESMSG5       54A  O  6  3
+     A            RESMSG6       54A  O  7  3
+     A            RESMSG7       54A  O  8  3
+     A            RESMSG8       54A  O  9  3
+     A                                  1  3'Compilation Results'
+     A                                      DSPATR(HI)
+     A                                 10  3'F12=Close'
+     A*=====================================================================
+     A* Error Message Subfile
+     A*=====================================================================
+     A          R MSGSFL                    SFL
+     A            MSGKEY         4A  H
+     A            MSG           78A  O 24  2
+     A          R MSGCTL                    SFLCTL(MSGSFL)
+     A                                      SFLDSP
+     A                                      SFLDSPCTL
+     A                                      SFLSIZ(2)
+     A                                      SFLPAG(1)
+     A            PGMQ          10A  H
+     A            DUMMY          1A  H
